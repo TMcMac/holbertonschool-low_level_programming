@@ -2,12 +2,17 @@
 #include <time.h>
 #include <stdio.h>
 
-/*
- *This is a short program to generate a random number
- *and assign it to the variable n. We will then
- *divide n until we are left with only the last
- *digit and output that digit.
+/**
+ * main - entry point
+ *
+ * This is a short program to generate a random number
+ * and assign it to the variable n. We will then
+ * divide n until we are left with only the last
+ * digit and output that digit.
+ *
+ * Return: Always 0 (Succes)
  */
+
 int main(void)
 {
 	int n;
