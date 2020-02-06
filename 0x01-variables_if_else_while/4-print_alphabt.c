@@ -12,17 +12,14 @@
 
 int main(void)
 {
-	char alphaA[27] = "abcdefghijklmnopqrstuvwxyz";
 	int i = 0;
-	char ch;
+	char ch = 'a';
 
-	for (i = 0; i < 26; i++)
+	for (i = 0; i < 25; i++)
 	{
-		ch = alphaA[i];
 		if (ch != 'e' && ch != 'q')
 			putchar(ch);
-		else
-			;
+		ch++;
 	}
 
 	putchar('\n');
