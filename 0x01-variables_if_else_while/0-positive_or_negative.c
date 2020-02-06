@@ -2,9 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
- /*
+/**
+  *main - entry point
+  *
   * This is a short program to assign a random number to n
   * to n and then output if n is positive or negative.
+  *
+  * Return: Always 0 (Success)
   */
 
 int main(void)
