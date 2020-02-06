@@ -15,7 +15,7 @@ int main(void)
 	int i = 0;
 	char ch = 'a';
 
-	for (i = 0; i < 25; i++)
+	for (i = 0; i < 26; i++)
 	{
 		if (ch != 'e' && ch != 'q')
 			putchar(ch);
