@@ -25,11 +25,11 @@ int main(void)
 	o = n % 10;
 
 	if (o > 5)
-		printf("%d and greater than 5.\n", o);
+		printf("%d and is greater than 5\n", o);
 	else if (o == 0)
-		printf("%d  and is 0.\n", o);
+		printf("%d  and is 0\n", o);
 	else if (o < 6)
-		printf("%d and is less than 6 and not 0.\n", o);
+		printf("%d and is less than 6 and not 0\n", o);
 
 	return (0);
 }
