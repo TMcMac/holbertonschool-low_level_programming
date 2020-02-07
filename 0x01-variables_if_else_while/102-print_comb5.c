@@ -20,7 +20,7 @@ int main(void)
 	int setB;
 
 	for (setA = 0; setA < 99; setA++)
-		for (setB = 1; setB <= 99; setB++)
+		for (setB = setA + 1; setB <= 99; setB++)
 		{
 			putchar((setA / 10) + '0');
 			putchar((setA % 10) + '0');
