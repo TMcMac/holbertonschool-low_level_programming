@@ -23,10 +23,15 @@ int main(void)
 	{
 		for (ones += jump; ones < 10; ones++)
 		{
-			putchar(tens + '0');
-			putchar(ones + '0');
-			putchar(',');
-			putchar(' ');
+			if (tens == ones)
+				;
+			else
+			{
+				putchar(tens + '0');
+				putchar(ones + '0');
+				putchar(',');
+				putchar(' ');
+			}
 		}
 		ones = 0;
 		jump += 1;
