@@ -29,8 +29,13 @@ int main(void)
 			{
 				putchar(tens + '0');
 				putchar(ones + '0');
-				putchar(',');
-				putchar(' ');
+				if (tens == 8 && ones == 9)
+					;
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 		ones = 0;
