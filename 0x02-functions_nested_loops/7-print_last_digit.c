@@ -1,4 +1,4 @@
-#include "holberton.h"
+ #include "holberton.h"
 #include <unistd.h>
 
 /**
@@ -16,7 +16,7 @@ int print_last_digit(int n)
 
 	if (n < 0)
 	{
-		n = (n * -1);
+		n *= -1;
 		last_digit  = (n % 10);
 	}
 	else
