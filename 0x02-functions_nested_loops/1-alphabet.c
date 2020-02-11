@@ -2,11 +2,11 @@
 #define NEWLINE '\n'
 
 /**
- * main - entry point
+ * print_alphabet - prints the alphabet
  *
- * This function prints the alphabet
+ * There are not parameters
  *
- * Return: Always 0.
+ * Return: There is no return
  */
 
 
@@ -20,3 +20,4 @@ void print_alphabet(void)
 	_putchar(NEWLINE);
 
 }
+
