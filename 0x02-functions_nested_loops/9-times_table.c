@@ -22,15 +22,28 @@ void times_table(void)
 		num = 0;
 		_putchar((num) + '0');
 		_putchar(COMMA);
-		_putchar(SPACE);
-		_putchar(SPACE);
 
 		for (col = 0; col < 9; col++)
 		{
-			_putchar((num += add) + '0');
-			_putchar(COMMA);
-			_putchar(SPACE);
-			_putchar(SPACE);
+			if ((num + add) < 10)
+			{
+				_putchar(SPACE);
+				_putchar(SPACE);
+				_putchar((num += add) + '0');
+
+				if (col < 8)
+					_putchar(COMMA);
+			}
+			else
+			{
+				num += add;
+				_putchar(SPACE);
+				_putchar((num / 10) + '0');
+				_putchar((num % 10) + '0');
+
+				if (col < 8)
+					_putchar(COMMA);
+			}
 		}
 		add = add + 1;
 		_putchar('\n');
