@@ -1,8 +1,6 @@
-#include <unistd.h>
 #include "holberton.h"
-
-#define COMMA ','
-#define SPACE ' '
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * print_to_98 - a function that takes
@@ -18,27 +16,23 @@
 
 void print_to_98(int n)
 {
-	int i;
 
-	if (i > 98)
-		for (i = n; i > 98; i--)
+	if (n > 98)
+	{
+		while (n > 98)
 		{
-			_putchar((i / 100) + '0');
-			_putchar((i / 10) + '0');
-			_putchar((i % 10) + '0');
-			_putchar(COMMA);
-			_putchar(SPACE);
+			printf("%d, ", n);
+			n--;
 		}
+		printf("%d\n", n);
+	}
 	else
-		for (i = n; i <= 98; i++)
+	{
+		while (n < 98)
 		{
-			_putchar((i / 100) + '0');
-			_putchar((i / 10) + '0');
-			_putchar((i % 10) + '0');
-			_putchar(COMMA);
-			_putchar(SPACE);
+			printf("%d, ", n);
+			n++;
 		}
-
-	_putchar('\n');
-
+		printf("%d\n", n);
+	}
 }
