@@ -1,4 +1,7 @@
 #include "holberton.h"
+#define SLASH '\\'
+#define NEWLINE '\n'
+#define SPACE ' '
 
 /**
  * print_diagonal - prints a diagonal line
@@ -13,14 +16,16 @@ void print_diagonal(int n)
 {
 	int i, j;
 
-	for (i = 0; i < n; i++)
-	{
-		_putchar('\\');
+	if (n <= 0)
 		_putchar('\n');
-
-		for (j = 0; j < i; j++)
+	else
+		for (i = 0; i < n; i++)
 		{
-			_putchar(' ');
+			for (j = 0; j < i; j++)
+			{
+				_putchar(SPACE);
+			}
+			_putchar(SLASH);
+			_putchar(NEWLINE);
 		}
-	}
 }
