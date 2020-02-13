@@ -1,8 +1,10 @@
 #include "holberton.h"
 
 /**
- * is_upper - a function to see if a char is upper
+ * _isupper - a function to see if a char is upper
  * case or not
+ *
+ * @c: an int signifying a char
  *
  * Return: 1 if upper case, 0 if not.
  */
