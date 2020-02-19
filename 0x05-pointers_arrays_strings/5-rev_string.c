@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 
 /**
  * rev_string - a function to reverse a string
