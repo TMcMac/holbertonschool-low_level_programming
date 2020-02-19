@@ -4,10 +4,14 @@
 /**
  * rev_string - a function to reverse a string
  *
+ * _strlen - a function to get length of string
+ *
  * @s: a string passed from main
  *
  * Return: no return
  */
+int _strlen(char *s);
+
 
 void rev_string(char *s)
 {
@@ -23,4 +27,14 @@ void rev_string(char *s)
 		begin++;
 		end--;
 	}
+}
+
+int _strlen(char *s)
+{
+	int len;
+
+	for (len = 0; s[len] != '\0'; len++)
+		continue;
+
+	return (len);
 }
