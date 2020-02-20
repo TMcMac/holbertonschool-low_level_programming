@@ -11,6 +11,8 @@
  * Return: a pointer to the dest string after src has been appended
  */
 
+int _strlen(char *s);
+
 char *_strncat(char *dest, char *src, int n)
 {
 	int counter = 0;
@@ -41,4 +43,22 @@ char *_strncat(char *dest, char *src, int n)
 
 
 	return (dest);
+}
+
+/**
+ * _strlen - a function to return the length of a string
+ *
+ * @s: a char pointer passed from main
+ *
+ * Return: returns an int
+ */
+
+int _strlen(char *s)
+{
+	 int len;
+
+	for (len = 0; s[len] != '\0'; len++)
+		continue;
+
+	return (len);
 }
