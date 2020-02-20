@@ -18,6 +18,9 @@ char *cap_string(char *str)
 	int count = 0;
 	int length = _strlen(str);
 
+	if (str[count] >= 'a' && str[count] <= 'z')
+		str[count] -= 32;
+
 	while (count < length)
 	{
 		while (str[count] == '\t' || str[count] == ' ' || str[count] == '!'
