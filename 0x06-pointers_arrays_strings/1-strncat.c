@@ -1,5 +1,7 @@
 #include "holberton.h"
 
+int _strlen(char *s);
+
 /**
  * _strncat - a function to concatonate two strings with the second
  * string providing n bytes
@@ -10,8 +12,6 @@
  *
  * Return: a pointer to the dest string after src has been appended
  */
-
-int _strlen(char *s);
 
 char *_strncat(char *dest, char *src, int n)
 {
