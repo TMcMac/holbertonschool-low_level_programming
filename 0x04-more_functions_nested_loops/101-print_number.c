@@ -2,45 +2,66 @@
 #include <stdio.h>
 #include <math.h>
 
+int power(int base, int exp);
+
 /**
- * print_number - a function to print out an int
- * with only putchar.
+ * print_number - a function to print any integer using only putchar
  *
- * @n: an int from main.c
+ * @n: an int of any size passed from main
  *
- * Return: there is no return
+ * Return: no return
  */
 
 void print_number(int n)
 {
 	int num = n;
-	double count = 0;
-	int i;
-	double divider = 10;
+	int pwr = 0;
+	int digits = 0;
+	int base = 10;
+	int divider;
+	int tmp = 0;
+
+	if (num == 0)
+		_putchar('0');
+	else if (num < 0)
+	{
+		_putchar('-');
+	}
 
 	while (num != 0)
 	{
 		num /= 10;
-		divider *= 10;
-		count++;
+		digits++;
 	}
 
-	for (i = 0; i < count; i++)
+	for (pwr = digits; pwr > 0; pwr--)
 	{
-		if (n < 0)
-			_putchar('-');
-
-		if (n > 100)
-		{
-			putchar((n / divider) + '0');
-			n /= 10;
-			divider /= 10;
-		}
-		else
-		{
-			putchar((n / 10) + '0');
-			putchar((n % 10) + '0');
-		}
+		divider = power(base, pwr);
+		tmp = (n / divider);
+		if (tmp < 0)
+			tmp *= -1;
+		_putchar(tmp + '0');
+		n = (n % divider);
 	}
 
+}
+
+/**
+ * power - a function to return the length of a string
+ *
+ * @base: a base for out exponentiation
+ * @exp: out exponent
+ *
+ * Return: returns an int
+ */
+
+int power(int base, int exp)
+{
+	int i = 1;
+	int result = 1;
+
+	for (i = 1; i < exp; i++)
+		result *= base;
+
+	return (result);
 }
