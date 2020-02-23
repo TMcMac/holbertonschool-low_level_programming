@@ -1,15 +1,13 @@
 #include <stdio.h>
-/* This is a program intended to return 1 and send a quote to stdout from stderr */
-
-int main()
+#include <unistd.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
 {
-	int A = 0;
-	
-	if (A > 1)
-		2>&1
-		return 1;
-	else
-		;
-
-	return (0);
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n",
+	      sizeof("and that piece of art is useful\" - Dora Korpar, 2015-10-19"));
+	return (1);
 }
