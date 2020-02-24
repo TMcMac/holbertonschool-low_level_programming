@@ -21,8 +21,8 @@ char *_strstr(char *haystack, char *needle)
 	{
 		return (&haystack[0]);
 	}
-	if (needle[0] == ' ')
-		return (haystack);
+	if (sizeof(needle) == 0)
+		return (&haystack[0]);
 
 	while (haystack[i] != '\0')
 	{
