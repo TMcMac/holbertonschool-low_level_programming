@@ -19,13 +19,13 @@ char *_strchr(char *s, char c)
 	{
 		if (s[i] == c)
 		{
-			s = (s + i);
+			s = s + i;
 			return (s);
 		}
 	}
 
 	if (c == '\0')
-		s = (s + (i + 1));
+		s = s + (i + 1);
 	else
 		s = '\0';
 
