@@ -14,27 +14,18 @@
 char *_strchr(char *s, char c)
 {
 	int i = 0;
-	int j = 0;
 
-	while (s[i])
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == c)
 		{
 			s = (s + i);
 			return (s);
 		}
-		else
-			i++;
 	}
 
 	if (c == '\0')
-	{
-		while (s[j])
-		{
-			j++;
-		}
-		s = (s + (j + 1));
-	}
+		s = (s + (i + 1));
 	else
 		s = '\0';
 
