@@ -30,9 +30,9 @@ unsigned int _strspn(char *s, char *accept)
 				count++;
 				break;
 			}
+			else if (j == size - 1)
+				return (count);
 		}
-		if (accept[size] != s[i])
-			return (count);
 	}
 	return (count);
 }
