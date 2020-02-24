@@ -1,8 +1,6 @@
 #include "holberton.h"
 #include <unistd.h>
 
-int _putchar(char c);
-
 /**
  * print_chessboard - a function to print a chessboard
  *
@@ -22,17 +20,4 @@ void print_chessboard(char (*a)[8])
 		if (i < 8)
 			_putchar('\n');
 	}
-}
-
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }
