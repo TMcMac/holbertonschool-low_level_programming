@@ -30,7 +30,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (haystack[i] == needle[j])
 		{
-			point = (haystack + i);
+			point = &haystack[i];
 			for (j = 1; needle[j] != '\0'; j++)
 			{
 				i += 1;
@@ -38,7 +38,6 @@ char *_strstr(char *haystack, char *needle)
 				{
 					if (needle[j + 1] == '\0')
 						return (point);
-					continue;
 				}
 				else
 					break;
