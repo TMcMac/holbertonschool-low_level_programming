@@ -25,7 +25,7 @@ char *_strchr(char *s, char c)
 	}
 
 	if (c == '\0')
-		s = s + (i + 1);
+		s = s + 1;
 	else
 		s = 0;
 
