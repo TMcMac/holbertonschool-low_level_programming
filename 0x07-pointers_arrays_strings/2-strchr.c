@@ -19,15 +19,15 @@ char *_strchr(char *s, char c)
 	{
 		if (s[i] == c)
 		{
-			s = s + i;
+			s = (s + i);
 			return (s);
 		}
 	}
 
 	if (c == '\0')
-		s = s + 1;
+		s = (s + 1);
 	else
-		s = 0;
+		s = '\0';
 
 	return (s);
 }
