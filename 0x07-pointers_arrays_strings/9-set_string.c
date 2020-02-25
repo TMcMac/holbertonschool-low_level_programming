@@ -3,7 +3,7 @@
 /**
  * set_string - fuction to point a double pointer at a pointer
  *
- * @t: a pointer
+ * @to: a pointer
  * @s: a double pointer
  *
  * Return: no return
