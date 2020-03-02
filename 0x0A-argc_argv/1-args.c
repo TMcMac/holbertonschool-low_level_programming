@@ -10,12 +10,14 @@
  * Return: 0 always success.
  */
 
-int main(int argc, char *argv[])
+int main(int argc, __attribute__ ((unused)) char *argv[])
 {
-	if (argc > 0)
-		printf("%d\n", argc);
-	else
-		printf("%s experienced an error: invalid arguments\n", argv[0]);
+	int count = 0;
+
+	while (count < argc)
+		count++;
+
+	printf("%d\n", count);
 
 	return (0);
 }
