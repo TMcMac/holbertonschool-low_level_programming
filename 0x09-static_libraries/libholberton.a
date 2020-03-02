@@ -1,5 +1,5 @@
 !<arch>
-0-memset.c/     1583078015  1000  1000  100664  380       `
+0-memset.o/     1583078015  1000  1000  100664  380       `
 #include "holberton.h"
 
 /**
@@ -26,7 +26,7 @@ char *_memset(char *s, char b, unsigned int n)
 
 	return (s);
 }
-0-strcat.c/     1583089687  1000  1000  100664  494       `
+0-strcat.o/     1583089687  1000  1000  100664  494       `
 #include "holberton.h"
 #include <stdio.h>
 
@@ -60,7 +60,7 @@ char *_strcat(char *dest, char *src)
 
 	return (dest);
 }
-100-atoi.c/     1583113244  1000  1000  100664  573       `
+100-atoi.o/     1583113244  1000  1000  100664  573       `
 /**
  * _atoi - Function that converts a character array to an integer
  * @str_to: String to be converted to unsigned integer
@@ -95,7 +95,7 @@ int _atoi(char *str_to)
 	return (result * sign_count);
 }
 
-1-isdigit.c/    1583089921  1000  1000  100664  271       `
+1-isdigit.o/    1583089921  1000  1000  100664  271       `
 #include "holberton.h"
 
 /**
@@ -115,7 +115,7 @@ int _isdigit(int c)
 		return (0);
 }
 
-1-memcpy.c/     1583078004  1000  1000  100664  467       `
+1-memcpy.o/     1583078004  1000  1000  100664  467       `
 #include "holberton.h"
 
 /**
@@ -142,7 +142,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-1-strncat.c/    1583078391  1000  1000  100664  1013      `
+1-strncat.o/    1583078391  1000  1000  100664  1013      `
 #include "holberton.h"
 
 int _strlen(char *s);
@@ -208,7 +208,7 @@ int _strlen(char *s)
 	return (len);
 }
 
-2-strchr.c/     1583077958  1000  1000  100664  590       `
+2-strchr.o/     1583077958  1000  1000  100664  590       `
 #include "holberton.h"
 
 /**
@@ -242,7 +242,7 @@ char *_strchr(char *s, char c)
 
 	return (s);
 }
-2-strlen.c/     1583089879  1000  1000  100664  271       `
+2-strlen.o/     1583089879  1000  1000  100664  271       `
 #include "holberton.h"
 
 /**
@@ -268,7 +268,7 @@ int _strlen(char *s)
 	return (i);
 }
 
-2-strncpy.c/    1583078380  1000  1000  100664  874       `
+2-strncpy.o/    1583078380  1000  1000  100664  874       `
 #include "holberton.h"
 
 int _strlen(char *s);
@@ -332,7 +332,7 @@ int _strlen(char *s)
 
 	return (len);
 }
-3-islower.c/    1583090022  1000  1000  100664  343       `
+3-islower.o/    1583090022  1000  1000  100664  343       `
 #include "holberton.h"
 #include <unistd.h>
 
@@ -360,7 +360,7 @@ int _islower(int c)
 
 }
 
-3-puts.c/       1583089857  1000  1000  100664  253       `
+3-puts.o/       1583089857  1000  1000  100664  253       `
 #include "holberton.h"
 #include <stdio.h>
 /**
@@ -382,7 +382,7 @@ void _puts(char *str)
 	_putchar('\n');
 }
 
-3-strcmp.c/     1583078336  1000  1000  100664  894       `
+3-strcmp.o/     1583078336  1000  1000  100664  894       `
 #include "holberton.h"
 
 int _strlen(char *s);
@@ -444,7 +444,7 @@ int _strlen(char *s)
 
 	return (len);
 }
-3-strspn.c/     1583077912  1000  1000  100664  606       `
+3-strspn.o/     1583077912  1000  1000  100664  606       `
 #include "holberton.h"
 
 /**
@@ -483,7 +483,7 @@ unsigned int _strspn(char *s, char *accept)
 	}
 	return (count);
 }
-4-strpbrk.c/    1583077875  1000  1000  100664  504       `
+4-strpbrk.o/    1583077875  1000  1000  100664  504       `
 #include "holberton.h"
 
 /**
@@ -509,7 +509,7 @@ char *_strpbrk(char *s, char *accept)
 
 	return (s);
 }
-5-strstr.c/     1583074486  1000  1000  100664  820       `
+5-strstr.o/     1583074486  1000  1000  100664  820       `
 #include "holberton.h"
 
 /**
@@ -561,7 +561,7 @@ char *_strstr(char *haystack, char *needle)
 	point = 0;
 	return (point);
 }
-6-abs.c/        1583090047  1000  1000  100664  328       `
+6-abs.o/        1583090047  1000  1000  100664  328       `
 #include "holberton.h"
 #include <unistd.h>
 
@@ -588,7 +588,7 @@ int _abs(int n)
 
 	return (value);
 }
-isalpha.c/      1583090419  1000  1000  100664  363       `
+isalpha.o/      1583090419  1000  1000  100664  363       `
 #include "holberton.h"
 #include <unistd.h>
 
@@ -616,7 +616,7 @@ int _isalpha(int c)
 
 }
 
-isupper.c/      1583090247  1000  1000  100664  342       `
+isupper.o/      1583090247  1000  1000  100664  342       `
 #include "holberton.h"
 #include <unistd.h>
 
@@ -643,7 +643,7 @@ int _isupper(int c)
 	return (result);
 
 }
-_putchar.c/     1583072137  1000  1000  100664  270       `
+_putchar.o/     1583072137  1000  1000  100664  270       `
 #include <unistd.h>
 #include "holberton.h"
 
