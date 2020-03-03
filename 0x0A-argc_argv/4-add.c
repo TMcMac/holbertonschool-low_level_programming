@@ -13,19 +13,21 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum;
-	int count = 0;
+	int i;
+	int j;
+	int sum = 0;
 
-	while (count < argc - 1)
-		count++;
-
-	for (i = 0; count > 0; i++)
+	for (j = 1; j < argc; j++)
 	{
-		sum += (atoi(argv[i]));
-		count--;
+		for (i = 0; argv[j][i]; i++)
+			if (argv[j][i] > '9' || argv[j][i] < '0')
+			{
+				printf("Error\n");
+				return (1);
+			}
+		sum += strtol(argv[j], NULL, 10);
 	}
-
 	printf("%d\n", sum);
-
 	return (0);
+}
 }
