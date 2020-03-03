@@ -25,17 +25,16 @@ char *create_array(unsigned int size, char c)
 	else
 	{
 		array = (char *)malloc(size * sizeof(char));
-		for (i = 0; i < size; i++)
-			array[i] = c;
-		array[i] = '\0';
+		if (array == NULL)
+		{
+			return (NULL);
+		}
+		else
+		{
+			for (i = 0; i < size; i++)
+				array[i] = c;
+			array[i] = '\0';
+		}
 	}
-
-	if (array == NULL)
-	{
-		return (NULL);
-	}
-	else
-	{
-		return (array);
-	}
+	return (array);
 }
