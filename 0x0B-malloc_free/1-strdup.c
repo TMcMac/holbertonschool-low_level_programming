@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int _strlen(char *s);
+
 /**
  * *_strdup - a function to copy a string to a new location and
  * return a pointer to the new location.
@@ -23,7 +25,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	else
-		new = malloc(length * sizeof(char));
+		new = (char*) malloc(length * sizeof(char));
 
 	if (new == NULL)
 	{
@@ -35,4 +37,22 @@ char *_strdup(char *str)
 
 	return (new);
 
+}
+
+ /**
+  * _strlen - a function to return the length of a string
+  *
+  * @s: a char pointer passed from main
+  *
+  * Return: returns an int for the length of s
+  */
+
+int _strlen(char *s)
+{
+	int len;
+
+	for (len = 0; s[len] != '\0'; len++)
+		continue;
+
+return (len);
 }
