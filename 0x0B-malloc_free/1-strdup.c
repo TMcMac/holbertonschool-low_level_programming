@@ -17,30 +17,27 @@ char *_strdup(char *str)
 	int length = 0;
 	char *new;
 
+	if (str == '\0')
+	{
+		return (NULL);
+	}
+
 	while (str[length] != '\0')
 	{
 		length++;
 	}
 
-	if (str == '\0')
+	new = (char *) malloc((length * sizeof(char)) + 1);
+	if (new == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
-		new = (char *) malloc((length * sizeof(char)) + 1);
-
-		if (new == NULL)
-		{
-			return (NULL);
-		}
-		else
-		{
-			for (i = 0; i < length; i++)
-				new[i] = str[i];
-			new[i] = '\0';
-		}
+		for (i = 0; i < length; i++)
+			new[i] = str[i];
+		new[i] = '\0';
 	}
-	return (new);
 
+	return (new);
 }
