@@ -17,14 +17,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i = 0;
 	char *concat;
 	unsigned int len;
-	unsigned int s2len = _strlen(s2);
+	unsigned int s2len;
 
 /* Treat null value strings as empty string */
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-
+	s2len = _strlen(s2);
 	if (s2len > n)
 		s2len = n;
 	len = (_strlen(s1) + (s2len + 1));
