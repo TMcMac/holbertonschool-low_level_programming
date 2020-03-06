@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _calloc - a function to make a array of nmemb # elements each
@@ -11,18 +12,22 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	void *array;
+	void **array;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
 
-	array = malloc(nmemb * size);
-	if (array == 0)
+	for (i = 0; i < nmemb; i++)
 	{
-		return (NULL);
+		array = malloc(nmemb * size);
+		if (array == 0)
+		{
+			return (NULL);
+		}
 	}
+
 	for (i = 0; i < nmemb; i++)
 	{
 		*(array + i) = 0;
