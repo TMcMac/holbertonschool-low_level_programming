@@ -15,7 +15,7 @@
 int *array_range(int min, int max)
 {
 	int i = min;
-	int count = 1;
+	int count = 0;
 	int j;
 	int *array;
 
