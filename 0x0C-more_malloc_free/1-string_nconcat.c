@@ -19,7 +19,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int len;
 	unsigned int s2len;
 
-/* Treat null value strings as empty string, check if n > s2len for nbytes, set total len */
+/*Treat null value strings as empty string,*/
+/*check if n > s2len for nbytes, set total len*/
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
@@ -34,7 +35,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		return (NULL);
 	}
-/* Fill concat with data from s1 and nbytes or total s2, append null byte and return  */
+/*Fill concat with data from s1 and nbytes or total s2,*/
+/*append null byte and return*/
 	for (i = 0; s1[i] != '\0'; i++, j++)
 		concat[j] = s1[i];
 
