@@ -3,4 +3,6 @@
 
 #define SIZE 1024
 
-#enfif
+extern int main(void);
+
+#endif /* OBJECT_LIKE_MACRO_H */
