@@ -8,7 +8,7 @@
  * @owner: the onwer's name
  */
 
-extern int main(void);
+
 
 struct dog
 {
