@@ -29,7 +29,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	namestore = _strdup(name);
 	ownerstore = _strdup(owner);
-
+	if (ownerstore == NULL)
+	{
+		free(ownerstore);
+		free(namestore);
+		free(newdog);
+		return (NULL);
+	}
+	if (namestore == NULL)
+	{
+		free(namestore);
+		free(newdog);
+		return (NULL);
+	}
 	newdog->name = namestore;
 	newdog->age = age;
 	newdog->owner = ownerstore;
