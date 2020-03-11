@@ -13,7 +13,7 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned int counter;
 	/* Set a counter and then check is params are valid */
-	if (array != NULL && size > 0)
+	if (array != NULL && size > 0 && action != NULL)
 	{
 		void (*ptr)(int);
 
