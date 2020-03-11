@@ -3,11 +3,10 @@
 
 /**
  * main - a function that prints the opcodes of its own main function
- *
  * Return: 0 for success
  */
 
-int main ()
+int main(void)
 {
 	return (0);
 }
