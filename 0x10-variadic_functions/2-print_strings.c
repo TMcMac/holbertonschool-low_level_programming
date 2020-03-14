@@ -18,7 +18,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	if (n < 1)
 	{
-		printf("/n");
+		printf("\n");
 		return;
 	}
 
