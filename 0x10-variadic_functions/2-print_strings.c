@@ -13,9 +13,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int count;
 	char *ptr = NULL;
-	va_list(ap);
 
-	if (n == 0)
+y	va_list(ap);
+
+	if (n <= 0)
 		return;
 
 	va_start(ap, n);
