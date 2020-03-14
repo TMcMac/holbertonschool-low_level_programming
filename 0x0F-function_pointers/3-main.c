@@ -18,7 +18,7 @@ int main (int argc, char *argv)
 		exit (98);
 	}
 
-	if (argv[2] != '+' || argv[2] != '-' || argv[2] != '*' || argv[2] != '/' || argv[2] != '%')
+	if (argv[2] != '+' && argv[2] != '-' && argv[2] != '*' && argv[2] != '/' && argv[2] != '%')
 	{
 		printf("ERROR\n");
 		exit (99);
@@ -33,5 +33,7 @@ int main (int argc, char *argv)
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 
-	return (0);
+	result = int (*get_op_func(operator))(a, b);
+
+	return (result);
 }
