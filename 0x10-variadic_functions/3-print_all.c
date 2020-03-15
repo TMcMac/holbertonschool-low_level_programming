@@ -28,7 +28,7 @@ void print_all(const char * const format, ...)
 
 	va_start(ap, format);
 
-	while (format[i] && format != NULL)
+	while (format != NULL && format[i])
 	{
 		j = 0;
 		while (type_ref[j].f != NULL)
@@ -87,6 +87,6 @@ void print_string(va_list ap)
 
 	ex = va_arg(ap, char *);
 	if (ex == NULL)
-		printf("(nil)");
+		ex = "(nil)";
 	printf("%s", ex);
 }
