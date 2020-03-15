@@ -12,7 +12,8 @@
 
 void print_all(const char * const format, ...)
 {
-	int i = 0, j = 0;
+	int i = 0;
+	int j;
 
 	print type_ref[] = {
 		{"c", print_char},
@@ -26,8 +27,9 @@ void print_all(const char * const format, ...)
 
 	va_start(ap, format);
 
-	while (format[i])
+	while (format[i] && format != NULL)
 	{
+		j = 0;
 		while (type_ref[j].f != NULL)
 		{
 			if (format[i] == type_ref[j].f[0])
@@ -36,26 +38,30 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-
 	va_end(ap);
+	printf("\n");
 }
 
+/**
+ * print_int - print an int
+ * @ap: typed arg from main
+ */
 void print_int(va_list ap)
 {
-	printf("%d\n", va_arg(ap, int));
+	printf("%d", va_arg(ap, int));
 }
 
 void print_char(va_list ap)
 {
-	printf("%c\n", va_arg(ap, int));
+	printf("%c", va_arg(ap, int));
 }
 
 void print_float(va_list ap)
 {
-	printf("%f\n", va_arg(ap, double));
+	printf("%f", va_arg(ap, double));
 }
 
 void print_string(va_list ap)
 {
-	printf("%s\n", va_arg(ap, char *));
+	printf("%s", va_arg(ap, char *));
 }
