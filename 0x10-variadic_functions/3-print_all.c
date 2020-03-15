@@ -1,36 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "variadic_functions.h"
-
+#include <stdarg.h>
 
 /**
- *
- *
- *
- *
+ * print_all - a function to take in different data types
+ * @format: the format type fed from main and compared against
+ * our struct.
+ * Return: no return
  */
-
-print type_ref[] {
-	{"c", print_char},
-	{"i", print_int},
-	{"f", print_float},
-	{"s", print_string},
-	{NULL, NULL}
-};
 
 void print_all(const char * const format, ...)
 {
 	int i = 0, j = 0;
+
+	print type_ref[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string},
+		{NULL, NULL}
+	};
+
 	va_list ap;
 
 	va_start(ap, format);
 
 	while (format[i])
 	{
-		while (type_ref[j] != NULL)
+		while (type_ref[j].f != NULL)
 		{
-			if (format[i] == type_ref[j].f)
-				type_ref[j].ptr(va_arg(ap));
+			if (format[i] == type_ref[j].f[0])
+				type_ref[j].ptr(ap);
 			j++;
 		}
 		i++;
@@ -39,22 +40,22 @@ void print_all(const char * const format, ...)
 	va_end(ap);
 }
 
-void print_int(int a)
+void print_int(va_list ap)
 {
-	printf("%d\n", a);
+	printf("%d\n", va_arg(ap, int));
 }
 
-void print_char(char a)
+void print_char(va_list ap)
 {
-	printf("%c\n", a);
+	printf("%c\n", va_arg(ap, int));
 }
 
-void print_float(float a)
+void print_float(va_list ap)
 {
-	printf("%f\n", a);
+	printf("%f\n", va_arg(ap, double));
 }
 
-void print_string(char *a)
+void print_string(va_list ap)
 {
-	printf("%s\n", a);
+	printf("%s\n", va_arg(ap, char *));
 }
