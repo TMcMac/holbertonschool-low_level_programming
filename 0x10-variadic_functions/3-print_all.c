@@ -14,6 +14,7 @@ void print_all(const char * const format, ...)
 {
 	int i = 0;
 	int j;
+	char *delim =  "";
 
 	print type_ref[] = {
 		{"c", print_char},
@@ -33,7 +34,11 @@ void print_all(const char * const format, ...)
 		while (type_ref[j].f != NULL)
 		{
 			if (format[i] == type_ref[j].f[0])
+			{
+				printf("%s", delim);
 				type_ref[j].ptr(ap);
+				delim = ", ";
+			}
 			j++;
 		}
 		i++;
@@ -51,15 +56,30 @@ void print_int(va_list ap)
 	printf("%d", va_arg(ap, int));
 }
 
+/**
+ * print_char - print a single char
+ * @ap: a char passed
+ */
+
 void print_char(va_list ap)
 {
 	printf("%c", va_arg(ap, int));
 }
 
+/**
+ * print_float - print a float
+ * @ap: float passed
+ */
+
 void print_float(va_list ap)
 {
 	printf("%f", va_arg(ap, double));
 }
+
+/**
+ * print_string - print a passed string
+ * @ap: a string passed
+ */
 
 void print_string(va_list ap)
 {
