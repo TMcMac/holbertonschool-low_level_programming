@@ -4,21 +4,21 @@
 #include "3-calc.h"
 
 /**
- * main - our main function 
+ * main - our main function
  * @argc: number of args
  * @argv: an array of args passed from the cmdline
  * Return: 0 success
  */
 
-int main (int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int a, b;
 	int (*fptr)(int, int);
 
 	if (argc != 4)
 	{
-		printf("ERROR\n");
-		exit (98);
+		printf("Error\n");
+		exit(98);
 	}
 
 	fptr = get_op_func(argv[2]);
@@ -27,16 +27,16 @@ int main (int argc, char **argv)
 
 	if (fptr == NULL)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		exit(99);
 	}
 
 	if (b == 0 && (!strcmp(argv[2], "/") || !strcmp(argv[2], "%")))
 	{
-		printf("ERROR\n");
-		exit (100);
+		printf("Error\n");
+		exit(100);
 	}
 
-	printf("%d\n", fptr(a,b));
+	printf("%d\n", fptr(a, b));
 	return (0);
 }
