@@ -8,9 +8,6 @@
  * Return: return a pointer to the correct operation
  */
 
-
-
-
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -21,6 +18,7 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
+
 	int i;
 
 	while (ops[i].op != NULL)

@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	if (b == 0 && (!strcmp(argv[2], "/") || !strcmp(argv[2], "%")))
+	if (b == 0 && ((!strcmp(argv[2], "/")) || (!strcmp(argv[2], "%"))))
 	{
 		printf("Error\n");
 		exit(100);
