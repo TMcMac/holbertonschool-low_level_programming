@@ -1,16 +1,19 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include "3-calc.h"
 
 /**
  * main - our main function 
- *
+ * @argc: number of args
+ * @argv: an array of args passed from the cmdline
  * Return: 0 success
  */
 
-int main (int argc, char *argv)
+int main (int argc, char **argv)
 {
-	int a, b, result;
-	char operator = argv[2];
+	int a, b;
+	int (*fptr)(int, int);
 
 	if (argc != 4)
 	{
@@ -18,22 +21,22 @@ int main (int argc, char *argv)
 		exit (98);
 	}
 
-	if (argv[2] != '+' && argv[2] != '-' && argv[2] != '*' && argv[2] != '/' && argv[2] != '%')
+	fptr = get_op_func(argv[2]);
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	if (fptr == NULL)
 	{
 		printf("ERROR\n");
-		exit (99);
+		exit(99);
 	}
 
-	if (argv[3] == 0 && (argv[2] == '/' || argv[2] == '%'))
+	if (b == 0 && (!strcmp(argv[2], "/") || !strcmp(argv[2], "%")))
 	{
 		printf("ERROR\n");
 		exit (100);
 	}
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-
-	result = int (*get_op_func(operator))(a, b);
-
-	return (result);
+	printf("%d\n", fptr(a,b));
+	return (0);
 }
