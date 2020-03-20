@@ -1,7 +1,7 @@
 ;; The purpose of this program is to print Hello, Holberton;;
 
  segment .data
- hello db "Hello, world!", 0xa, 0
+ hello db "Hello, Holberton", 0xa, 0
 	
  segment .text
  global main
