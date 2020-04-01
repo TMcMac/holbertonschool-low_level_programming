@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
  */
 void cant_read(char *file_from)
 {
-	dprintf(STDERR_FILENO, "Error: Can't read from file %s", file_from);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 	exit(98);
 }
 /**
@@ -73,7 +73,7 @@ void cant_read(char *file_from)
  */
 void cant_write(char *file_to)
 {
-	dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 	exit(99);
 }
 
