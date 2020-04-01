@@ -13,8 +13,8 @@ int _strlen(char *s);
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
-	int len = _strlen(text_content);
+	int fd, wrt, cls;
+	int len;
 
 	if (filename == NULL)
 		return (-1);
@@ -23,14 +23,18 @@ int create_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
-	if (text_content == NULL)
-	{
-		text_content = "";
-		len = 1;
-	}
-	write(fd, filename, len);
+	if (text_content != NULL)
+		len = _strlen(text_content);
+	else
+		return (-1);
 
-	close(fd);
+	wrt = write(fd, filename, len);
+	if (wrt < 0)
+		return (-1);
+
+	cls = close(fd);
+	if (cls < 0)
+		return (-1);
 	return (1);
 }
 
