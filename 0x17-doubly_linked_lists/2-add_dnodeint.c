@@ -17,13 +17,17 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	newnode = malloc(sizeof(dlistint_t));
 	if (newnode == NULL)
 	{
-		dprintf(2, "Error: Can't malloc\n");
-		exit(EXIT_FAILURE);
+		return (NULL);
 	}
 	newnode->n = n;
-	newnode->next = (*head);
 	newnode->prev = NULL;
-	(*head)->prev = newnode;
+	if ((*head) == NULL)
+		newnode->next = NULL;
+	else
+	{
+		newnode->next = (*head);
+		(*head)->prev = newnode;
+	}
 	(*head) = newnode;
 	return ((*head));
 }
