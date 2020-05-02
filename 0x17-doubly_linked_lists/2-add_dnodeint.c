@@ -9,9 +9,8 @@
 
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *temp = (*head);
+/*	dlistint_t *temp = (*head); */
 	dlistint_t *newnode;
-	dlistint_t new;
 
 	if (head == NULL)
 		return (NULL);
@@ -21,9 +20,10 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		dprintf(2, "Error: Can't malloc\n");
 		exit(EXIT_FAILURE);
 	}
-	new = {n, NULL, (*head)}
-	newnode = &new;
-	head->prev = newnode;
+	newnode->n = n;
+	newnode->next = (*head);
+	newnode->prev = NULL;
+	(*head)->prev = newnode;
 	(*head) = newnode;
 	return ((*head));
 }
