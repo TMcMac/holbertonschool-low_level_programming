@@ -1,0 +1,21 @@
+#include "lists.h"
+
+/**
+ * free_dlistint - a function to free a dbl linked list
+ * @head: a pointer to the head node
+ */
+
+void free_dlistint(dlistint_t *head)
+{
+	dlistint_t *current;
+
+	if (head == NULL)
+		exit(1);
+	current = head;
+	while (current->next != NULL)
+	{
+		current = current->next;
+		free (current->prev);
+	}
+	free(current);
+}
