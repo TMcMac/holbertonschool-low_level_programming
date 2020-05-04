@@ -18,16 +18,27 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if ((*h) == NULL)
 		return (NULL);
 /* If the above is passed, the list is not empty */
-	mover = (*h); /* Sets mover to the head node */
+	mover = (*h); 
+/* Sets mover to the head node */
 	newnode = malloc(sizeof(dlistint_t));
 	if (newnode == NULL)
 		return (NULL);
 /* Checks for a malloc fail */
-	newnode->n = n; /* sets Newnode n to supplied n  */
+	newnode->n = n; 
+/* sets Newnode n to supplied n  */
+	if (idx == 0)
+	{
+/* If the intention is to replace the head node */
+		newnode->prev = NULL;
+		newnode->next = mover;
+		(*h) = newnode;
+		return ((*h));
+	}
 	while (count < idx && mover != NULL)
 	{
 		if (count == (idx - 1))
-		{ /* If the next node is where we want to insert */
+		{ 
+/* If the next node is where we want to insert */
 			newnode->prev = mover;
 		}
 		count++;
@@ -35,7 +46,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	mover->prev->next = newnode;
 	if (mover == NULL && count != idx)
-	{ /* If we get through the list without hitting idx */
+	{ 
+/* If we get through the list without hitting idx */
 		free(newnode->prev);
 		free(newnode);
 		return (NULL);
