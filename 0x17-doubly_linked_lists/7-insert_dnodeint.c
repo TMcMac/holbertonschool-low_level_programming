@@ -28,12 +28,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		if (count == (idx - 1))
 		{ /* If the next node is where we want to insert */
-			mover->next = newnode;
 			newnode->prev = mover;
 		}
 		count++;
 		mover = mover->next;
 	}
+	mover->prev->next = newnode;
 	if (mover == NULL && count != idx)
 	{ /* If we get through the list without hitting idx */
 		free(newnode->prev);
