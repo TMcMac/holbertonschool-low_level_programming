@@ -1,9 +1,8 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+This is the readme file for Holberton School Cohort 11, February 2020, low lever engineering sections 0x09-static_libraries project.
 
-#include <stdio.h>
-#include <stdlib.h>
 
+Project 0: libholberton.a, holberton.h
+Create the dynamic library libholberton.so containing all the functions listed below:
 int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);
@@ -25,4 +24,7 @@ unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 
-#endif
+
+Project 1: reate_static_lib.sh
+Create a script that creates a dynamic library called liball.so from all the .c files that are in the current directory.
+
