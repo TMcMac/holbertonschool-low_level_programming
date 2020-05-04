@@ -31,6 +31,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 /* If the intention is to replace the head node */
 		newnode->prev = NULL;
 		newnode->next = mover;
+		mover->prev = newnode;
 		(*h) = newnode;
 		return ((*h));
 	}
