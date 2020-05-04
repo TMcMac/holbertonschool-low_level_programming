@@ -13,7 +13,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *mover;
 	dlistint_t *newnode;
-	dlistint_t *tmp;
 	unsigned int count = 0;
 
 	if ((*h) == NULL)
@@ -37,13 +36,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		free(newnode);
 		return (NULL);
 	}
-	newnode->next = mover->next;
-	tmp = mover->prev;
-	mover = mover->next;
-/* This is where my problem is */
+	newnode->next = mover;
 	mover->prev = newnode;
-	printf("Mover prev set\n");
 
-	tmp->next = newnode;
 	return (newnode);
 }
