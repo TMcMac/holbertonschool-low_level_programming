@@ -14,5 +14,11 @@ int main(void)
 
 	ht = hash_table_create(1024);
 	hash_table_set(ht, "betty", "holberton");
+	hash_table_set(ht, "hetairas", "Holbie");
+	hash_table_set(ht, "mentioner", "DiffHolbie");
+	hash_table_set(ht, "joyful", "Test3");
+	hash_table_set(ht, "synaphea", "Test4");
+
+
 	return (EXIT_SUCCESS);
 }

@@ -1,5 +1,7 @@
 #include "hash_tables.h"
 
+hash_node_t *make_node(const char *key, const char *value);
+
 /**
  * hash_table_set - a function to take in a hash table,
  * get the hash of a key which is then stored at the
@@ -21,27 +23,50 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht->array[position] == NULL)
 	{
-		node = malloc(sizeof(hash_node_t) * 1);
-		node->key = malloc(strlen(key) + 1);
-		node->value = malloc(strlen(value) + 1);
-		strcpy(node->key, key);
-		strcpy(node->value, value);
-		node->next = NULL;
+		node = make_node(key, value);
 		ht->array[position] = node;
 	}
-	else if (strcmp((ht->array[position]->key), key) == 0)
-		ht->array[position]->value = (char *)value;
 	else
 	{
-		tmp = ht->array[position];
-		node = malloc(sizeof(hash_node_t) * 1);
-		node->key = malloc(strlen(key) + 1);
-		node->value = malloc(strlen(value) + 1);
-		strcpy(node->key, key);
-		strcpy(node->value, value);
-		node->next = tmp;
-		ht->array[position] = node;
+		if (strcmp((ht->array[position]->key), key) == 0)
+			ht->array[position]->value = (char *)value;
+		else if (ht->array[position]->next != NULL)
+		{
+			tmp = ht->array[position];
+			while (tmp != NULL)
+			{
+				tmp = tmp->next;
+				if (strcmp(tmp->key, key) == 0)
+				{
+					tmp->value = (char *)value;
+					return (1);
+				}
+			}
+			tmp = ht->array[position];
+			node = make_node(key, value);
+			node->next = tmp;
+			ht->array[position] = node;
+		}
 	}
-
 	return (1);
+}
+
+/**
+ * make_node - a function to make a new node for our hashtable
+ * @key: the key
+ * @value: value matched to the key
+ * Return: a pointer to our new node
+ */
+
+hash_node_t *make_node(const char *key, const char *value)
+{
+	hash_node_t *new_node;
+	new_node = malloc(sizeof(hash_node_t) * 1);
+	new_node->key = malloc(strlen(key) + 1);
+	new_node->value = malloc(strlen(value) + 1);
+	strcpy(new_node->key, key);
+	strcpy(new_node->value, value);
+	new_node->next = NULL;
+
+	return (new_node);
 }
