@@ -1,5 +1,13 @@
 #include "hash_tables.h"
 
+/**
+ * hash_djb2 - a function to transform a string
+ * into a hash.
+ * @str: the string input to be hashed
+ * Return: the hashed version of the string
+ */
+
+
 unsigned long int hash_djb2(const unsigned char *str)
 {
 	unsigned long int hash;

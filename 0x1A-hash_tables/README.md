@@ -1,7 +1,7 @@
 # 0x1A. C - Hash tables
 #### Foundations - Low-level programming & Algorithm ― Data structures and Algorithms
 #### by Julien Barbier, co-founder at Holberton School
-#### Ongoing project - started 05-28-2020, must end by 05-30-2020 
+#### Ongoing project - started 05-28-2020, must end by 05-30-2020
 
 ### Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
