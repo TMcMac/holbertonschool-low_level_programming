@@ -14,7 +14,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int position;
 	hash_node_t *tmp;
 
-	if (ht == NULL || key == NULL || key == "")
+	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
 		return (NULL);
 
 	position = key_index((unsigned char *)key, ht->size);
