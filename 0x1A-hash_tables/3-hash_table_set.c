@@ -34,24 +34,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			ht->array[position]->value = strdup(value);
 			return (1);
 		}
-		else if (ht->array[position]->next != NULL)
+		for (tmp = ht->array[position]; tmp != NULL; tmp = tmp->next)
 		{
-			tmp = ht->array[position];
-			while (tmp != NULL)
+			if (strcmp(tmp->key, key) == 0)
 			{
-				tmp = tmp->next;
-				if (strcmp(tmp->key, key) == 0)
-				{
-					free(tmp->value);
-					tmp->value = strdup(value);
-					return (1);
-				}
-			}
-			tmp = ht->array[position];
-			node = make_node(key, value);
-			node->next = tmp;
-			ht->array[position] = node;
+				free(tmp->value);
+                                tmp->value = strdup(value);
+                                return (1);
+                        }
 		}
+		tmp = ht->array[position];
+		node = make_node(key, value);
+		node->next = tmp;
+		ht->array[position] = node;
 	}
 	return (1);
 }
@@ -70,8 +65,8 @@ hash_node_t *make_node(const char *key, const char *value)
 	new_node = malloc(sizeof(hash_node_t) * 1);
 	new_node->key = malloc(strlen(key) + 1);
 	new_node->value = malloc(strlen(value) + 1);
-	strcpy(new_node->key, key);
-	strcpy(new_node->value, value);
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
 	new_node->next = NULL;
 
 	return (new_node);
