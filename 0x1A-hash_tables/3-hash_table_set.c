@@ -14,13 +14,14 @@ hash_node_t *make_node(const char *key, const char *value);
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int size = ht->size;
-	unsigned long int position = key_index((unsigned char *)key, size);
+	unsigned long int size;
+	unsigned long int position;
 	hash_node_t *node, *tmp;
 
-	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
+	if (ht == NULL || key == NULL || strcmp(key, "") == 0 || value == NULL)
 		return (0);
-
+	size = ht->size;
+	position = key_index((unsigned char *)key, size);
 	if (ht->array[position] == NULL)
 	{
 		node = make_node(key, value);
