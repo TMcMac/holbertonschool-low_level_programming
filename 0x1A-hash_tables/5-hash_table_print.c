@@ -27,11 +27,10 @@ void hash_table_print(const hash_table_t *ht)
 				mover = ht->array[i]->next;
 				while (mover != NULL)
 				{
-					printf("'%s': '%s'", mover->key, mover->value);
 					printf(", ");
+					printf("'%s': '%s'", mover->key, mover->value);
 					mover = mover->next;
 				}
-				punct = 0;
 			}
 		}
 	}
