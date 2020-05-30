@@ -9,6 +9,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i = 0, punct = 0;
+	hash_node_t *mover;
 
 	if (ht == NULL)
 		return;
@@ -21,6 +22,16 @@ void hash_table_print(const hash_table_t *ht)
 				printf(", ");
 			printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
 			punct = 1;
+			if (ht->array[i]->next != NULL)
+			{
+				mover = ht->array[i]->next;
+				while (mover != NULL)
+				{
+					printf("'%s': '%s'", mover->key, mover->value);
+					printf(", ");
+					mover = mover->next;
+				}
+			}
 		}
 	}
 	printf("}\n");
