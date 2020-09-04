@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * dlistint_len - a function to get the length of a list
+ * print_dlistint - a function to print out the nodes of a dbl linked list
  * @h: a pointer to the head node
- * Return: A count of the number of nodes in the list
+ * Return: the count of nodes in the list
  */
-size_t dlistint_len(const dlistint_t *h)
+size_t print_dlistint(const dlistint_t *h)
 {
     size_t count = 0;
     const dlistint_t *mover = h;
@@ -16,6 +16,7 @@ size_t dlistint_len(const dlistint_t *h)
     while (mover != NULL)
     {
         count++;
+        printf("%d\n", mover->n);
         mover = mover->next;
     }
     return (count);
