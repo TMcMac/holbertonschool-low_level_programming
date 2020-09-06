@@ -7,16 +7,16 @@
  */
 int sum_dlistint(dlistint_t *head)
 {
-    int sum = 0;
-    dlistint_t *mover = head;
+	int sum = 0;
+	dlistint_t *mover = head;
 
-    if (head == NULL)
-        return 0;
+	if (head == NULL)
+		return 0;
 
-    while (mover != NULL)
-    {
-        sum += mover->n;
-        mover = mover->next;
-    }
-    return sum;
+	while (mover != NULL)
+	{
+		sum += mover->n;
+		mover = mover->next;
+	}
+	return (sum);
 }
