@@ -12,7 +12,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
     dlistint_t *mover;
 
     if (head == NULL)
-        return NULL;
+      return (NULL);
     mover = head;
     while (count < index && mover != NULL)
      {
@@ -22,5 +22,5 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
     if (count == index)
         return (mover);
     else
-        return NULL;
+      return (NULL);
 }
