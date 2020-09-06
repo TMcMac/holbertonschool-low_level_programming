@@ -10,17 +10,6 @@ size_t dlistint_len(const dlistint_t *h)
 	size_t count = 0;
 	const dlistint_t *mover = h;
 
-<<<<<<< HEAD
-	if (h == NULL)
-		return 0;
-    
-	while (mover != NULL)
-	{
-		count++;
-		mover = mover->next;
-	}
-	return (count);
-=======
     if (h == NULL)
       return (0);
 
@@ -30,5 +19,4 @@ size_t dlistint_len(const dlistint_t *h)
         mover = mover->next;
     }
     return (count);
->>>>>>> d29e33b56f7cbe6b590a9a8e327c6aa6187d2eaa
 }
