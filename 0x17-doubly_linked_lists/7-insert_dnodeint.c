@@ -29,6 +29,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	return (new_node);
 }
 
+/**
+ * get_dnodeint_at_index - function for finding a node at a certain index
+ * @head: the head of the list
+ * @index: an index to look for
+ * Return: A node or Null if out of bounds
+ */
 
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
@@ -41,8 +47,8 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	while (count < index && mover != NULL)
 	{
 		mover = mover->next;
-    	count++;
-    }
+		count++;
+	}
 	if (count == index)
 		return (mover);
 	else
