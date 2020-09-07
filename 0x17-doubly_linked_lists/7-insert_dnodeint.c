@@ -7,6 +7,10 @@
  * @n: an int to put in the new node
  * Return: The address to the new node or NULL
  */
+
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
+
+
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *new_node;
@@ -14,7 +18,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 
     if (position_node == NULL)
-      return (NULL);
+    	return (NULL);
 
     new_node = malloc(sizeof(dlistint_t));
     new_node->n = n;
@@ -24,4 +28,24 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
     position_node->prev = new_node;
 
     return (new_node);
+}
+
+
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+{
+	unsigned int count = 0;
+	dlistint_t *mover;
+
+    if (head == NULL)
+    	return (NULL);
+    mover = head;
+    while (count < index && mover != NULL)
+    {
+    	mover = mover->next;
+        count++;
+    }
+    if (count == index)
+        return (mover);
+    else
+    	return (NULL);
 }
