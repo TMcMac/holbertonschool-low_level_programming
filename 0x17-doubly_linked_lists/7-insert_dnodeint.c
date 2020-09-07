@@ -1,5 +1,7 @@
 #include "lists.h"
 
+dlistint_t *get_dnodeint_at_index(dlistint_t *list, unsigned int index);
+
 /**
  * insert_dnodeint_at_index - function to insert a new node at a specific index
  * @h: the head of the list
@@ -7,9 +9,6 @@
  * @n: an int to put in the new node
  * Return: The address to the new node or NULL
  */
-
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
-
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -31,19 +30,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 /**
  * get_dnodeint_at_index - function for finding a node at a certain index
- * @head: the head of the list
+ * @list: the head of the list
  * @index: an index to look for
  * Return: A node or Null if out of bounds
  */
 
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+dlistint_t *get_dnodeint_at_index(dlistint_t *list, unsigned int index)
 {
 	unsigned int count = 0;
 	dlistint_t *mover;
 
-	if (head == NULL)
+	if (list == NULL)
 		return (NULL);
-	mover = head;
+	mover = list;
 	while (count < index && mover != NULL)
 	{
 		mover = mover->next;
