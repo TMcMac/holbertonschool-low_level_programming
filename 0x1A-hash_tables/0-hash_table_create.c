@@ -15,7 +15,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	/*If it is successful first we will add the size from inputs*/
 	new_table->size = size;
-	/** 
+	/**
 	 * Next we are going to malloc an array of the correct
 	 * number of pointers for nodes
 	 */
