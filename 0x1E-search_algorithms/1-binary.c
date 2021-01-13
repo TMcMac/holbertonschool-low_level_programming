@@ -11,23 +11,22 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-  unsigned int i, j, idx;
+	unsigned int i, j, idx;
 
-  if (array == NULL || size <= 0)
-      return (-1);
+	if (array == NULL || size <= 0)
+			return (-1);
 
-  i = (size / 2);
-  printf("Searching in array: ");
-  for (j = 0; j < (size - 1); j++)
-    printf("%d, ", array[j]);
-  printf("%d\n", array[j]);
-  if (array[i] == value)
-    return (i);
-  if (array[i] > value)
-    idx = binary_search(array, i, value);
-  if (array[i] < value)
-    idx = binary_search(&(array[i]), i, value);
-  
-  return(idx);
+	i = (size / 2);
+	printf("Searching in array: ");
+	for (j = 0; j < (size - 1); j++)
+		printf("%d, ", array[j]);
+	printf("%d\n", array[j]);
+	if (array[i] == value)
+		return (i);
+	if (array[i] > value)
+		idx = binary_search(array, i, value);
+	if (array[i] < value)
+		idx = binary_search(&(array[i]), i, value);
+	
+	return(idx);
 }
-
