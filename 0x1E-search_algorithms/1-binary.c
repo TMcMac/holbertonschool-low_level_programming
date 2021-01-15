@@ -11,7 +11,7 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-  int part = ((size - 1) / 2), idx = 0;
+	int part = ((size - 1) / 2), idx = 0;
 	size_t j;
 
 	if (array == NULL || size < 1)
@@ -25,7 +25,7 @@ int binary_search(int *array, size_t size, int value)
 	if (array[part] == value)
 		return (part);
 	else if (size <= 1)
-	  return (-1);
+		return (-1);
 
 	if (array[part] > value)
 		return (binary_search(array, part, value));
