@@ -28,14 +28,14 @@ int binary_search(int *array, size_t size, int value)
 	  return (-1);
 
 	if (array[part] > value)
-	  return (binary_search(array, part, value));
+		return (binary_search(array, part, value));
 	if (array[part] < value)
-	  {
-	    part += 1;
-	    idx = binary_search(&(array[part]), size - part, value);
-	    if (idx == -1)
-	      return (-1);
-	    return (part + idx);
-	  }
+	{
+		part += 1;
+		idx = binary_search(&(array[part]), size - part, value);
+		if (idx == -1)
+			return (-1);
+		return (part + idx);
+	}
 	return (-1);
 }
